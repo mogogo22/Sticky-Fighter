@@ -282,8 +282,8 @@ const CH=[
 CH.push({n:'سوكونا',ex:1,exk:'cut',exn:['اضغط R للتقطيع','Press R to slice'],dmk:'shrine',dmc:'#ff3b1f',home:'Sukuna/sukunahome.png',card:'Sukuna/Sukuna.png',winSnd:'sk3',sm:'sk1',sn:{dom:'sk2',slash:'sk4',slash2:'sk5',spam:'sk6'},col:'#d0101c',au:'blood',ay:5,lc:'slash',rc:'slash2',lcc:15,rcc:25,lcd:60,rcd:180,cd1:1500,cd2:1200,lcn:['ديسمانتل','Dismantle'],rcn:['رابيد ديسمانتل','Rapid Dismantle'],ob:{x:55,y:115},hp:95,spd:5.4,dmg:9,sc:1,acc:'',sp:'dom',spn:'توسيع المجال',cost:100,sp2:'spam',spn2:'سبام',cost2:50,
 spr:{dir:'Sukuna',box:{l:.366,r:.562,t:.13,b:.822},h:160,oy:4,flip:0,anim:{dom:{n:36,fps:24,once:1},idle:{n:33,fps:24},jump:{n:20,fps:24,air:1,ap:9},run:{n:17,fps:24},hurt:{n:6,fps:24,stun:1},cast:{n:11,fps:24,once:1,ch:1},win:{n:42,fps:24,once:1,w:1},slash:{n:14,fps:24,once:1},slash2:{n:15,fps:24,once:1},spam:{n:41,fps:24,once:1}}}});
  (()=>{const s=CH[CH.length-1].spr,im=new Image();im.onload=()=>{try{const w=im.naturalWidth,h=im.naturalHeight,cv=document.createElement('canvas');cv.width=w;cv.height=h;const x=cv.getContext('2d');x.drawImage(im,0,0);const d=x.getImageData(0,0,w,h).data;let l=w,r=0,t=h,b=0;for(let j=0;j<h;j++)for(let i=0;i<w;i++)if(d[(j*w+i)*4+3]>20){if(i<l)l=i;if(i>r)r=i;if(j<t)t=j;if(j>b)b=j}if(r>=l&&b>=t)s.box={l:l/w,r:(r+1)/w,t:t/h,b:(b+1)/h}}catch(e){}};im.src=s.dir+'/idle/idle_0000.png'})();
-  CH.push({n:'جوكو',nrs:1,ex:1,exk:'cut',exn:['اضغط R للتقطيع','Press R to slice'],dmk:'shrine',dmc:'#ff3b1f',card:'Goku/goku.png',col:'#ff9a1f',au:'flow',ay:5,lc:'slash',rc:'slash2',lcc:15,rcc:25,lcd:60,rcd:180,cd1:1500,cd2:1200,lcn:['ضربة','Hit'],rcn:['ضربة 2','Hit 2'],ob:{x:55,y:115},hp:95,spd:5.4,dmg:9,sc:1,acc:'',sp:'dom',spn:'توسيع المجال',cost:100,sp2:'spam',spn2:'سبام',cost2:50,
-spr:{dir:'Goku',box:{l:.366,r:.562,t:.13,b:.822},h:175,oy:-10,flip:0,anim:{idle:{n:46,fps:24}}}});
+  CH.push({n:'جوكو',winSnd:'gk5',cs:'gkaura',csd:30,nrs:1,ex:1,exk:'cut',exn:['اضغط R للتقطيع','Press R to slice'],dmk:'shrine',dmc:'#ff3b1f',card:'Goku/goku.png',col:'#ff9a1f',au:'ssj',aud:16,aur:.2,ay:5,lc:'slash',rc:'slash2',lcc:15,rcc:25,lcd:60,rcd:180,cd1:1500,cd2:1200,lcn:['ضربة','Hit'],rcn:['ضربة 2','Hit 2'],ob:{x:55,y:115},hp:95,spd:5.4,dmg:9,sc:1,acc:'',sp:'dom',spn:'توسيع المجال',cost:100,sp2:'spam',spn2:'سبام',cost2:50,
+spr:{dir:'Goku',box:{l:.366,r:.562,t:.13,b:.822},h:175,oy:-10,flip:0,anim:{idle:{n:46,fps:24},run:{n:22,fps:24},cast:{n:21,fps:24,once:1,ch:1},win:{n:52,fps:24,once:1,w:1}}}});
 (()=>{const s=CH[CH.length-1].spr,im=new Image();im.onload=()=>{try{const w=im.naturalWidth,h=im.naturalHeight,cv=document.createElement('canvas');cv.width=w;cv.height=h;const x=cv.getContext('2d');x.drawImage(im,0,0);const d=x.getImageData(0,0,w,h).data;let l=w,r=0,t=h,b=0;for(let j=0;j<h;j++)for(let i=0;i<w;i++)if(d[(j*w+i)*4+3]>20){if(i<l)l=i;if(i>r)r=i;if(j<t)t=j;if(j>b)b=j}if(r>=l&&b>=t)s.box={l:l/w,r:(r+1)/w,t:t/h,b:(b+1)/h}}catch(e){}};im.src=s.dir+'/idle/idle_0000.png'})();
   const SK=(f,q)=>(f.ch.sn&&f.ch.sn[q])||q;
 const NAMES=['الصقر','الجحيم','عقرب','نمر','الذئب','شبح','الإعصار','سفاح','قناص','الفهد','التنين','زلزال','الوحش','عاصفة','الغول'];
@@ -308,7 +308,7 @@ document.querySelectorAll('#tc b').forEach(b=>{
  b.addEventListener('contextmenu',e=>e.preventDefault());
 });
 /* ===== الصوت: حط مسار كل ملف هنا (سيبه '' لو لسه مجهزتوش) ===== */
-const SND={sk1:'Sukuna/sukuna1.wav',sk2:'Sukuna/sukuna2.wav',sk3:'Sukuna/sukuna3.wav',sk4:'Sukuna/sukuna4.wav',sk5:'Sukuna/sukuna5.wav',sk6:'Sukuna/sukuna6.wav',gojo3:'Gojo/gojo3.wav',hollow:'Gojo/gojo2.wav',dom:'Gojo/gojo.wav',dom4:'Gojo/gojo4.wav',blue:'Gojo/blue.wav',red:'Gojo/red.wav',run:'sounds/walk.wav',aura:'sounds/aura2.wav',click:'sounds/click.wav',menu:'sounds/main.wav',fight:'sounds/mufight.wav',waiting:'sounds/waiting.wav',count:'sounds/fight.wav',punch:'',hit:'',jump:'',special1:'',special2:'',bolt:'',ko:'sounds/KO.wav',go:'',win:''};
+const SND={sk1:'Sukuna/sukuna1.wav',sk2:'Sukuna/sukuna2.wav',sk3:'Sukuna/sukuna3.wav',sk4:'Sukuna/sukuna4.wav',sk5:'Sukuna/sukuna5.wav',sk6:'Sukuna/sukuna6.wav',gkaura:'sounds/aura.wav',gk5:'Goku/goku5.wav',gojo3:'Gojo/gojo3.wav',hollow:'Gojo/gojo2.wav',dom:'Gojo/gojo.wav',dom4:'Gojo/gojo4.wav',blue:'Gojo/blue.wav',red:'Gojo/red.wav',run:'sounds/walk.wav',aura:'sounds/aura2.wav',click:'sounds/click.wav',menu:'sounds/main.wav',fight:'sounds/mufight.wav',waiting:'sounds/waiting.wav',count:'sounds/fight.wav',punch:'',hit:'',jump:'',special1:'',special2:'',bolt:'',ko:'sounds/KO.wav',go:'',win:''};
 var domM=null;
 let VOL={m:.6,s:.8},curM=null,curN='menu';
 try{Object.assign(VOL,JSON.parse(localStorage.getItem('sfVol')||'{}'))}catch(e){}
@@ -674,12 +674,12 @@ function auraOld(f){
  c.restore();
 }
 function aura(f){
- if(f.aqT!==f.tick){f.aqT=f.tick;f.aq=Math.max(0,Math.min(1,(f.aq||0)+(f.chg?.12:-.035)))}
+  if(f.aqT!==f.tick){f.aqT=f.tick;f.ah=f.chg?(f.ah||0)+1:0;const ad=f.ch.aud||0,on=f.chg&&f.ah>ad;if(on&&ad&&f.ah===ad+1){shake=Math.max(shake,14);FX.push({k:'ring',x:f.x,y:f.y-60,r:10,mr:170,l:14,c:f.ch.col});FX.push({k:'ring',x:f.x,y:G+4,r:10,mr:120,l:12,c:'#fff'})}f.aq=Math.max(0,Math.min(1,(f.aq||0)+(on?(f.ch.aur||.12):-.035)))}
  const q=f.aq||0;if(q<=.01)return;
- const e=q*q*(3-2*q),sp=f.ch.spr,oy=sp?sp.oy:0;
+ const e=f.ch.aur?1-Math.pow(1-q,2.5):q*q*(3-2*q),sp=f.ch.spr,oy=sp?sp.oy:0;
  c.save();c.globalAlpha=e;
  c.translate(f.x,f.y+oy);c.scale(.8+.2*e,.45+.55*e);c.translate(-f.x,-(f.y+oy));
- if(f.ch.au==='flow')auraFlow(f);else if(f.ch.au==='blood')auraBlood(f);else auraOld(f);
+ if(f.ch.au==='flow')auraFlow(f);else if(f.ch.au==='ssj')auraSSJ(f);else if(f.ch.au==='blood')auraBlood(f);else auraOld(f);
  c.restore();
 }
 function auraBloodOld(f){
@@ -733,6 +733,36 @@ function auraBlood(f){
   c.stroke();
  }
  for(let i=0;i<28;i++){const u=(t*.016+i*.081)%1,x=Math.sin(i*5.1+t*.04)*34*s*(.3+u),y=-u*H*1.35,z=(2+i%3)*s*(1-u*.4);c.fillStyle='rgba(255,'+(40+i%3*35)+',30,'+(1-u)*.95+')';c.fillRect(x-z/2,y-z/2,z,z)}
+ c.restore();
+}
+function auraSSJ(f){
+ const sp=f.ch.spr,s=sp?sp.h/100:f.ch.sc,t=f.tick,H=165*s,pl=.85+Math.sin(t*.35)*.15;
+ c.save();c.translate(f.x,f.y+(sp?sp.oy:0)+(f.ch.ay||0)*s);c.globalCompositeOperation='lighter';c.lineCap='round';c.lineJoin='round';
+ let g=c.createRadialGradient(0,-H*.42,6,0,-H*.42,H*1.05);
+ g.addColorStop(0,'rgba(255,248,190,'+.55*pl+')');g.addColorStop(.4,'rgba(255,210,40,'+.34*pl+')');g.addColorStop(1,'rgba(255,150,0,0)');
+ c.fillStyle=g;c.fillRect(-H*1.2,-H*1.6,H*2.4,H*1.8);
+ c.fillStyle='rgba(255,225,90,'+.45*pl+')';c.beginPath();c.ellipse(0,0,48*s,9*s,0,0,7);c.fill();
+ for(let k=0;k<2;k++){const hb=((t+k*30)%60)/60;c.strokeStyle='rgba(255,230,100,'+(1-hb)*.85+')';c.lineWidth=(3.2-hb*2)*s;c.beginPath();c.ellipse(0,0,(20+hb*90)*s,(4+hb*18)*s,0,0,7);c.stroke()}
+ const fb=(x0,hh,w,sw)=>{c.beginPath();c.moveTo(x0-w,0);c.quadraticCurveTo(x0-w*.9+sw*.5,-hh*.55,x0+sw*1.8,-hh);c.quadraticCurveTo(x0+w*.9+sw*.5,-hh*.5,x0+w,0);c.closePath()};
+ for(let L=0;L<2;L++){
+  const n=L?9:15,m=(n-1)/2;
+  for(let i=0;i<n;i++){
+   const ph=i*2.1+L*1.3,x0=(i-m)*(L?8:7)*s,hh=H*(L?.68:1)*(.76+.34*Math.abs(Math.sin(t*(.17+L*.06)+ph)))*(1-Math.abs(i-m)/n*.6),sw=Math.sin(t*.24+ph)*11*s;
+   fb(x0,hh,(L?6:9)*s,sw);
+   const fg=c.createLinearGradient(0,0,0,-hh);
+   if(L){fg.addColorStop(0,'rgba(255,255,235,'+.95*pl+')');fg.addColorStop(.5,'rgba(255,240,120,'+.7*pl+')');fg.addColorStop(1,'rgba(255,220,60,0)')}
+   else{fg.addColorStop(0,'rgba(255,205,40,'+.8*pl+')');fg.addColorStop(.55,'rgba(255,170,0,'+.5*pl+')');fg.addColorStop(1,'rgba(255,120,0,0)')}
+   c.fillStyle=fg;c.fill();
+  }
+ }
+ for(let i=0;i<10;i++){const u=(t*.045+i*.37)%1,x=(i-4.5)*10*s,y=-u*H*1.1;c.strokeStyle='rgba(255,250,200,'+(1-u)*.75+')';c.lineWidth=1.7*s;c.beginPath();c.moveTo(x,y);c.lineTo(x,y-H*.22*(1-u*.4));c.stroke()}
+ for(let i=0;i<6;i++){
+  if(((t>>1)+i*3)%4)continue;
+  const xs=(i-2.5)*15*s,top=H*(.7+.5*Math.abs(Math.sin(i*3.1+(t>>1))));
+  const pts=[];for(let j=0;j<=9;j++){const u=j/9;pts.push([xs+Math.sin(j*12.9+i*4+(t>>1))*9*s+u*Math.sin(i*2.3)*22*s,-u*top])}
+  [[5,'rgba(255,200,40,.55)'],[1.7,'rgba(255,255,255,.95)']].forEach(([w,col])=>{c.strokeStyle=col;c.lineWidth=w*s;c.beginPath();pts.forEach((p,j)=>j?c.lineTo(p[0],p[1]):c.moveTo(p[0],p[1]));c.stroke()});
+ }
+ for(let i=0;i<34;i++){const u=(t*.02+i*.0294)%1,x=Math.sin(i*5.7+t*.03)*42*s*(.35+u),y=-u*H*1.4,z=(2+i%3)*s*(1-u*.5);c.fillStyle='rgba(255,'+(210+i%3*20)+',70,'+(1-u)+')';c.fillRect(x-z/2,y-z/2,z,z)}
  c.restore();
 }
 function auraFlow(f){
@@ -1185,6 +1215,19 @@ function bgBlur(a){
  c.fillStyle=g;c.fillRect(0,0,cv.width,cv.height);
  c.restore();
 }
+/* ===== Goku charge FX ===== */
+function gkFx(f){
+ const s=f.ch.spr,a=s&&s.dir==='Goku'&&s.anim.cast,fr=(a&&f.cst>0)?Math.min(a.n-1,Math.floor(f.cst*a.fps/60)):-1;
+ if(fr<0){f.gkP=-1;if(M.gkf===f){M.gkf=null;M.gkm=0}return}
+ if(fr>=12){if(f.gkP<12)shake=Math.max(shake,34);shake=Math.max(shake,9)}
+ if(fr===14||fr===15){M.gkf=f;M.gkm=fr===14?'b':'w'}else if(M.gkf===f){M.gkf=null;M.gkm=0}
+ f.gkP=fr;
+}
+function gkOver(T){
+ const f=M.gkf;if(!f)return;
+ c.save();c.setTransform(1,0,0,1,0,0);c.globalAlpha=1;c.globalCompositeOperation='source-over';c.fillStyle=M.gkm==='b'?'#000':'#fff';c.fillRect(0,0,cv.width,cv.height);c.restore();
+ c.save();c.setTransform(T);draw(c,f,f.x,f.y);c.restore();
+}
 function render(){if(M.net&&!render.x){render.x=1;const sv=P;P=sv.concat(PR);try{render()}finally{P=sv;render.x=0}return}
  c.save();c.clearRect(0,0,W,H);
  if(shake>.4){const k=shake*.55;c.translate((Math.random()-.5)*k,(Math.random()-.5)*k)}
@@ -1205,7 +1248,7 @@ function render(){if(M.net&&!render.x){render.x=1;const sv=P;P=sv.concat(PR);try
  const ord=M.ph==='end'?[M.F[1-M.win],M.F[M.win]]:M.F;
  ord.forEach(f=>exDraw(f));
  for(const s of S){c.globalAlpha=Math.min(1,s.l/20);c.fillStyle=s.c;c.fillRect(s.x,s.y,5,5)}
- c.globalAlpha=1;M.F.forEach(hollowFx);exFx();fxDraw();c.restore();fxScreen();hud();clashHud();exHud();
+ c.globalAlpha=1;M.F.forEach(hollowFx);exFx();fxDraw();const gkT=M.gkm?c.getTransform():null;c.restore();fxScreen();hud();clashHud();exHud();if(gkT)gkOver(gkT);
 }
 
 /* ===== تأثيرات القتال ===== */
@@ -1364,9 +1407,10 @@ function runSnd(){
  });
 }
 function chgSnd(f){
- if(!SND.aura)return;
- if(f.chg){
-  if(!f.cs){f.cs=new LA(SND.aura);f.cs.loop=true}
+ const k=f.ch.cs||'aura';if(!SND[k])return;
+ f.hld=f.chg?(f.hld||0)+1:0;
+ if(f.chg&&f.hld>=(f.ch.csd||0)){
+  if(!f.cs){f.cs=new LA(SND[k]);f.cs.loop=true}
   f.cs.volume=VOL.s*(f.ctl==='ai'?.4:.8);
   if(f.cs.paused)f.cs.play().catch(()=>{});
 }else if(f.cs&&!f.cs.paused){const v=f.cs.volume-VOL.s*.028;if(v>.02)f.cs.volume=v;else{f.cs.pause();f.cs.currentTime=0}}
@@ -2254,7 +2298,7 @@ function step(){
  }
  runSnd();if(M.net&&NET)netTick();
  for(const s of S){s.x+=s.vx;s.y+=s.vy;s.vy+=.5;s.l--}
- S=S.filter(s=>s.l>0);shake*=.8;fxStep();
+ S=S.filter(s=>s.l>0);M.F.forEach(gkFx);shake*=.8;fxStep();
  M.F.forEach(f=>{if(f.dhT>0)f.dhT--;else if(f.dh>f.hp)f.dh=Math.max(f.hp,f.dh-.5);if(f.ct>0&&--f.ct===0)f.cb=0;if(f.cp>0)f.cp--;chgSnd(f)});
 }
 
@@ -3504,6 +3548,63 @@ fit();requestAnimationFrame(loop);
    window.FB={db:D.getDatabase(app),...D};
    window.dispatchEvent(new Event('fbready'));
   }catch(e){console.error(e)}
+  // ===== Goku Charge FX =====
+const ChargeFX = {
+  CAST_FRAMES: 21,        // cast_0000 → cast_0020
+  SHAKE_FRAME: 12,        // بداية الهزة القوية
+  BLACK_FRAME: 14,
+  WHITE_FRAME: 15,
+  strongUntil: 0,
+  prevFrame: -1,
+  frame: -1,              // -1 = مفيش شحن
+  mode: 'none',           // none | black | white
+
+  // نادي عليها كل فريم لعبة بالفريم الحالي من cast (أو -1 لو مش بيشحن)
+  update(frame, now) {
+    // هزة قوية مرة واحدة أول ما نوصل 12 وإحنا طالعين (مش راجعين)
+    if (frame === this.SHAKE_FRAME && this.prevFrame < this.SHAKE_FRAME && this.prevFrame !== -1) {
+      this.strongUntil = now + 450;
+    }
+    // لو بدأنا من صفر مباشرة وعدّينا 12 في تحديث واحد
+    if (frame > this.SHAKE_FRAME && this.prevFrame >= 0 && this.prevFrame < this.SHAKE_FRAME) {
+      this.strongUntil = now + 450;
+    }
+    this.prevFrame = frame;
+    this.frame = frame;
+    this.mode = frame === this.BLACK_FRAME ? 'black'
+              : frame === this.WHITE_FRAME ? 'white' : 'none';
+  },
+
+  // هزة الشاشة: تشتغل لما الفريم >= 12 (طالع أو راجع، عشان التناسق)
+  shakeOffset(now) {
+    if (this.frame < this.SHAKE_FRAME) return { x: 0, y: 0 };
+    const strong = now < this.strongUntil;
+    const amp = strong ? 22 * ((this.strongUntil - now) / 450) + 5 : 4;
+    return { x: (Math.random() - 0.5) * 2 * amp, y: (Math.random() - 0.5) * 2 * amp };
+  },
+
+  // ابدأ بيها قبل رسم العالم
+  begin(ctx, now) {
+    const o = this.shakeOffset(now);
+    ctx.save();
+    ctx.translate(o.x, o.y);
+  },
+
+  // بعد رسم العالم كله (خلفية + لاعبين) وقبل ما ترسم جوكو:
+  // بتغطي كل حاجة بأسود/أبيض، وبعدين drawGoku بيرسم جوكو فوقها
+  end(ctx, w, h, drawGoku) {
+    if (this.mode !== 'none') {
+      ctx.save();
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.fillStyle = this.mode === 'black' ? '#000' : '#fff';
+      ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+      ctx.restore();
+      drawGoku(); // جوكو يتحط فوق الغطاء فمايتأثرش
+    }
+    ctx.restore(); // يقفل الـ save بتاع begin
+  }
+};
   </script>
+  
   </body>
 </html>
